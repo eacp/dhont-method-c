@@ -1,15 +1,15 @@
-# Saint-Lagüe distribution method
+# D'Hont distribution method
 
 This is a program/library to calculate the distribution of seats
 in an election for a parliament, congress, etc. It uses
-the [Webster/Saint-Lagüe method](https://en.wikipedia.org/wiki/Webster/Sainte-Laguë_method)
+the [D'Hont Method](https://en.wikipedia.org/wiki/D%27Hondt_method)
 to make the distribution.
 
 __I'M NOT RESPONSIBLE FOR THE USE OF THIS CODE NOR ITS RESULTS__,
 though I'm confident on the implementation.
 
 ## Context
-The *Webster/Saint-Lagüe method* is a way to distribute seats in a proportional
+The *D'Hont/Jefferson method* is a way to distribute seats in a proportional
 representation system according to the votes. It is used to assign seats to
 political parties when it is not possible to assign decimal seats. It generally tends
 to favor smaller parties.
@@ -46,47 +46,58 @@ many votes it got.
 To calculate the distribution, you do:
 
 ```
-$ ./saint-lague westeros.txt
+$ ./dhont westeros.txt
 ```
 
 And the output will be:
 
-    Stark: 7 seats
-    Lannister: 7 seats
-    Arryn: 1 seats
+    Stark: 8 seats
+    Lannister: 8 seats
     Baratheon: 1 seats
     Tully: 1 seats
-    Martell: 3 seats
+    Martell: 2 seats
     
-Another example:
+Another example, this time, using real data from an 
+election in Madrid:
 
-__fruitland.txt__
+__madrid.txt__
 
-    5 50 0
-    Pear 130755
-    Apple 102068
-    Grapefruit 34012
-    Orange 31090
-    Grape 11111
+    16 36 3
+    PP 1204059
+    Podemos 750607
+    Ciudadanos 676684
+    PSOE 643244
+    IU 189265
+    UPYD 43110
+    PACMA 28312
+    VOX 22461
+    X_IZQUIERDA 5007
+    FE-JONS 4691
+    RECORTES0 4014
+    PUM+J 2834
+    PH 1849
+    PCPE 1732
+    SAIn 1230
+    P-LIB 1056
 
 ```
-$ ./saint-lague fruitland.txt
-Pear: 21 seats
-Apple: 17 seats
-Grapefruit: 5 seats
-Orange: 5 seats
-Grape: 2 seats
+$ ./dhont madrid.txt
+PP: 13 seats
+Podemos: 8 seats
+Ciudadanos: 7 seats
+PSOE: 6 seats
+IU: 2 seats
 ```
 
 ### As a library
 You may use this code as a library by including the headers
-`data.h` and `saint_lague.h`. The files `data.c` and 
-`saint_lague.c` are needed because they contain
+`data.h` and `dhont.h`. The files `data.c` and 
+`dhont.c` are needed because they contain
 function definitions. You may use `main.c` as an example.
 
 ## More info:
 
-[Saint-Lagüe method page at Wikipedia](https://en.wikipedia.org/wiki/Webster/Sainte-Laguë_method)
+[D'Hont Method page at Wikipedia](https://en.wikipedia.org/wiki/D%27Hondt_method)
 
 ## Licence
 MIT Licence

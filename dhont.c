@@ -17,9 +17,9 @@ void dhont_distribute(Party *parliament, const unsigned int n_parties, const uns
 	*/
 	for(i = 0; i < n_seats;i++){
 		//get the major party according to the formula
-		unsigned int max_dhont = 0,max_dhont_index = 0,p;
+		unsigned int max_dhont = 0,max_dhont_index = 0,p,dhont;
 		for(p = 0; p < n_parties;p++){
-			const unsigned int dhont = DHONT_FORMULA(parliament[p]);
+			dhont = DHONT_FORMULA(parliament[p]);
 			if(dhont > max_dhont){
 				max_dhont = dhont;
 				max_dhont_index = p;

@@ -4,6 +4,7 @@
 
 #include "dhont.h"
 
+//This is the DHONT formula. It is a stablished one
 #define DHONT_FORMULA(p) ((p).votes/((p).seats + 1))
 
 void dhont_distribute(Party *parliament, const unsigned int n_parties, const unsigned int n_seats) {
